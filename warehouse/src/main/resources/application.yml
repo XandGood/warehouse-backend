@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/warehouse?useSSL=false&serverTimezone=UTC
+    username: root  # 你的MySQL用户名
+    password: 123456  # 你的MySQL密码
+
+server:
+  port: 9090  # 后端服务端口
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    db-config:
+       # 逻辑删除字段名
+       logic-delete-field: deleted
+       # 逻辑删除字面值：未删除为0
+       logic-not-delete-value: 0
+       # 逻辑删除字面值：删除为1
+       logic-delete-value: 1
+    mapper-locations: classpath*:/mapper/**/*.xml
+
