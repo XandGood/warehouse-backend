@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务实现类
@@ -19,4 +21,9 @@ import org.springframework.stereotype.Service;
 public class ProductServiceImpl extends ServiceImpl<ProductDao, Product> implements IProductService {
     @Autowired
     private ProductDao productDao;
+
+    @Override
+    public List<Product> getAllProducts() {
+        return productDao.selectList(null);
+    }
 }

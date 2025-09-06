@@ -4,6 +4,7 @@ import com.warehouseBack.domain.Warehouse;
 import com.warehouseBack.dao.WarehouseDao;
 import com.warehouseBack.service.IWarehouseService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class WarehouseServiceImpl extends ServiceImpl<WarehouseDao, Warehouse> implements IWarehouseService {
-
+    @Autowired
+    private WarehouseDao warehouseDao;
 }

@@ -2,16 +2,19 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/warehouse?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/warehouse_management?useSSL=false&serverTimezone=UTC
     username: root  # 你的MySQL用户名
     password: 123456  # 你的MySQL密码
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
 
 server:
   port: 9090  # 后端服务端口
 
 mybatis-plus:
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+   # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     db-config:
        # 逻辑删除字段名
        logic-delete-field: deleted

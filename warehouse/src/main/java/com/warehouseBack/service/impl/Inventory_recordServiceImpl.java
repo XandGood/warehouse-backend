@@ -4,6 +4,7 @@ import com.warehouseBack.domain.Inventory_record;
 import com.warehouseBack.dao.Inventory_recordDao;
 import com.warehouseBack.service.IInventory_recordService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class Inventory_recordServiceImpl extends ServiceImpl<Inventory_recordDao, Inventory_record> implements IInventory_recordService {
-
+    @Autowired
+    private Inventory_recordDao inventory_recordDao;
 }
