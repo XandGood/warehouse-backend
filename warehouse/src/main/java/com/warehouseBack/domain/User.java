@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -45,6 +46,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "用户号码",example = "13800138000")
     private String phone;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
     @ApiModelProperty(value = "创建时间", example = "2025-09-06 12:00:00")
     private LocalDateTime create_time;
 

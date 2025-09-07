@@ -2,13 +2,18 @@ package com.warehouseBack.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
-import java.io.Serializable;
 
+import java.io.Serializable;
+import java.sql.Date;
+import java.time.LocalDateTime;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * <p>
@@ -18,6 +23,8 @@ import lombok.EqualsAndHashCode;
  * @author XAG
  * @since 2025-09-06
  */
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value = "Inventory_record", description = "库存记录信息实体")
@@ -50,6 +57,7 @@ public class Inventory_record implements Serializable {
     @ApiModelProperty(value = "操作者人 关联user_id", example = "1")
     private Long operator_id;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "UTC")
     @ApiModelProperty(value = "操作时间", example = "2025-09-06 12:00:00")
     private LocalDateTime operate_time;
 

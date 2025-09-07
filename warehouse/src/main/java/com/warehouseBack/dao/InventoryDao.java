@@ -2,6 +2,9 @@ package com.warehouseBack.dao;
 
 import com.warehouseBack.domain.Inventory;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * <p>

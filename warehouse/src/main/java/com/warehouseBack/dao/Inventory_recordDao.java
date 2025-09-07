@@ -12,7 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @author XAG
  * @since 2025-09-06
  */
-
 public interface Inventory_recordDao extends BaseMapper<Inventory_record> {
 
 }

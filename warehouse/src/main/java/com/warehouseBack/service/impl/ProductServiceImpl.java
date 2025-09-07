@@ -26,4 +26,20 @@ public class ProductServiceImpl extends ServiceImpl<ProductDao, Product> impleme
     public List<Product> getAllProducts() {
         return productDao.selectList(null);
     }
+    @Override
+    public Product getProductById(Integer id) {
+        return productDao.selectById(id);
+    }
+    @Override
+    public boolean updateProduct(Product product) {
+        return productDao.updateById(product) > 0;
+    }
+    @Override
+    public boolean deleteProduct(Integer id) {
+        return productDao.deleteById(id) > 0;
+    }
+    @Override
+    public boolean addProduct(Product product) {
+        return productDao.insert(product) > 0;
+    }
 }

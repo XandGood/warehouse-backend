@@ -32,5 +32,29 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
+    @GetMapping("/list/{id}")
+    @ApiOperation(value = "根据ID获取产品信息", notes = "根据提供的ID查询产品的详细信息")
+    public Product getProductById(@PathVariable("id") Integer id) {
+        return productService.getProductById(id);
+    }
+
+    @PostMapping("/add")
+    @ApiOperation(value = "添加新产品", notes = "根据提供的参数添加新的产品信息")
+    public void addProduct(@RequestBody Product product) {
+        productService.addProduct(product);
+    }
+
+    @PutMapping("/update")
+    @ApiOperation(value = "更新产品信息", notes = "根据提供的参数更新产品的详细信息")
+    public void updateProduct(@RequestBody Product product) {
+        productService.updateProduct(product);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ApiOperation(value = "删除产品", notes = "根据提供的ID删除产品信息")
+    public void deleteProduct(@PathVariable("id") Integer id) {
+        productService.deleteProduct(id);
+    }
+
 }
 

@@ -9,11 +9,13 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
+
 server:
   port: 9090  # 后端服务端口
 
 mybatis-plus:
   configuration:
+    map-underscore-to-camel-case: false # 关闭下划线转驼峰
    # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     db-config:
        # 逻辑删除字段名
