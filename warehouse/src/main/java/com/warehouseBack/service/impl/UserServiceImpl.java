@@ -1,5 +1,6 @@
 package com.warehouseBack.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.warehouseBack.domain.User;
 import com.warehouseBack.dao.UserDao;
 import com.warehouseBack.service.IUserService;
@@ -41,6 +42,13 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements IUser
     @Override
     public boolean updateUser(User user) {
         return userDao.updateById(user) > 0;
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getUsername, username);
+        return userDao.selectOne(queryWrapper); // 假设用户名唯一
     }
 
 }

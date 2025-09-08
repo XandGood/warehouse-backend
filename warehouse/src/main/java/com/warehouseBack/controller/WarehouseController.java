@@ -1,6 +1,7 @@
 package com.warehouseBack.controller;
 
 
+import com.warehouseBack.annotation.RequireRole;
 import com.warehouseBack.domain.Warehouse;
 import com.warehouseBack.service.IWarehouseService;
 import io.swagger.annotations.Api;
@@ -37,6 +38,7 @@ public class WarehouseController {
         warehouseService.addWarehouse(warehouse);
     }
 
+    @RequireRole
     @DeleteMapping("/delete")
     @ApiOperation(value = "删除仓库")
     public void deleteWarehouse(@RequestParam("id") Integer id){
