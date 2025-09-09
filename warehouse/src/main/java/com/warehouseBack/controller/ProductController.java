@@ -32,7 +32,7 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    @GetMapping("/list/{id}")
+    @GetMapping("/{id}")
     @ApiOperation(value = "根据ID获取产品信息", notes = "根据提供的ID查询产品的详细信息")
     public Product getProductById(@PathVariable("id") Integer id) {
         return productService.getProductById(id);

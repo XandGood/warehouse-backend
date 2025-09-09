@@ -43,9 +43,9 @@ public class UserController {
     }
 
     @RequireRole
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{id}")
     @ApiOperation(value = "删除用户")
-    public void deleteUser(@RequestParam("id") Long id) {
+    public void deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);
     }
 
@@ -54,6 +54,12 @@ public class UserController {
     @ApiOperation(value = "更新用户")
     public void updateUser(@RequestBody User user) {
         userService.updateUser(user);
+    }
+
+    @GetMapping("/{id}")
+    @ApiOperation(value ="根据id获取用户信息")
+    public User getUserById(@PathVariable("id") Long id) {
+        return userService.getUserById(id);
     }
 
 

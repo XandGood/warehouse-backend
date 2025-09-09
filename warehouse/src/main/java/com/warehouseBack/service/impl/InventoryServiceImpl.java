@@ -38,12 +38,10 @@ public class InventoryServiceImpl extends ServiceImpl<InventoryDao, Inventory> i
         return inventoryDao.selectList(queryWrapper);
     }
 
+
     @Override
-    public List<Inventory> getInventoryByWarehouseIdAndProductId(Integer warehouseId, Integer productId) {
-        LambdaQueryWrapper<Inventory> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(Inventory::getWarehouse_id, warehouseId);
-        queryWrapper.eq(Inventory::getProduct_id, productId);
-        return inventoryDao.selectList(queryWrapper);
+    public List<Inventory> getInventoryList(){
+        return inventoryDao.selectList(null);
     }
 
 

@@ -22,12 +22,20 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns(
                         "/user/login",
                         "/user/add",
-                        "/swagger-ui/**",       // Swagger UI页面
-                        "/swagger-ui/index.html/**",
-                        "/swagger-resources/**", // Swagger资源
-                        "/v2/api-docs/**",// Swagger API文档
+                        // Swagger 2.x 路径
+                        "/swagger-ui.html",
+                        "/swagger-ui/**",
+                        "/swagger-resources/**",
+                        "/v2/api-docs",
+                        "/v2/api-docs/**",
+
+                        // Swagger 3.x 路径
+                        "/v3/api-docs",
                         "/v3/api-docs/**",
-                        "/webjars/**"           // Swagger UI的JS、CSS等资源
+                        "/swagger-ui/index.html",
+
+                        // 静态资源
+                        "/webjars/**"
                 ); // 放行登录接口（无需Token即可访问）
     }
 }

@@ -28,16 +28,22 @@ public class InventoryController {
     @Autowired
     IInventoryService inventoryService;
 
-    @GetMapping("WarehouseId/{warehouseId}")
+    @GetMapping("/WarehouseId/{warehouseId}")
     @ApiOperation(value = "根据仓库id获取库存信息")
     public List<Inventory> getInventoryByWarehouseId(Integer warehouseId){
         return inventoryService.getInventoryByWarehouseId(warehouseId);
     }
 
-    @GetMapping("ProductId/{productId}")
+    @GetMapping("/ProductId/{productId}")
     @ApiOperation(value = "根据产品id获取库存信息")
     public List<Inventory> getInventoryByProductId(Integer productId){
         return inventoryService.getInventoryByProductId(productId);
+    }
+
+    @GetMapping("/list")
+    @ApiOperation(value = "获取所有库存信息")
+    public List<Inventory> getAllInventory(){
+        return inventoryService.getInventoryList();
     }
 
 }

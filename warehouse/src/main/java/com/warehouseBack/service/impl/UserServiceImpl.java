@@ -45,6 +45,11 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements IUser
     }
 
     @Override
+    public User getUserById(Long id) {
+        return userDao.selectById(id);
+    }
+
+    @Override
     public User getUserByUsername(String username) {
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getUsername, username);

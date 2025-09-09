@@ -28,11 +28,5 @@ public interface IInventoryService extends IService<Inventory> {
      */
     List<Inventory> getInventoryByProductId(Integer productId);
 
-    /**
-     * 根据仓库Id和商品Id获取库存
-     * @param warehouseId 仓库id
-     * @param productId  商品id
-     * @return 库存
-     */
-    List<Inventory> getInventoryByWarehouseIdAndProductId(Integer warehouseId, Integer productId);
+    List<Inventory> getInventoryList();
 }
